@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Christopher Hamby</title>
+    <link>cjhamby.github.io/tags/</link>
+    <description>Recent content in Tags on Christopher Hamby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Aug 2020 10:09:19 -0400</lastBuildDate>
+    
+	<atom:link href="cjhamby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>cjhamby.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Sat, 01 Aug 2020 10:09:19 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Circuits</title>
+      <link>cjhamby.github.io/tags/circuits/</link>
+      <pubDate>Sat, 01 Aug 2020 10:09:19 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/tags/circuits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Embedded Systems</title>
+      <link>cjhamby.github.io/tags/embedded-systems/</link>
+      <pubDate>Sat, 01 Aug 2020 10:09:19 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/tags/embedded-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIDI</title>
+      <link>cjhamby.github.io/tags/midi/</link>
+      <pubDate>Sat, 01 Aug 2020 10:09:19 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/tags/midi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>3D Printing</title>
+      <link>cjhamby.github.io/tags/3d-printing/</link>
+      <pubDate>Mon, 17 Jun 2019 23:53:00 +0100</pubDate>
+      
+      <guid>cjhamby.github.io/tags/3d-printing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling</title>
+      <link>cjhamby.github.io/tags/modeling/</link>
+      <pubDate>Mon, 17 Jun 2019 23:53:00 +0100</pubDate>
+      
+      <guid>cjhamby.github.io/tags/modeling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prototyping</title>
+      <link>cjhamby.github.io/tags/prototyping/</link>
+      <pubDate>Mon, 17 Jun 2019 23:53:00 +0100</pubDate>
+      
+      <guid>cjhamby.github.io/tags/prototyping/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
