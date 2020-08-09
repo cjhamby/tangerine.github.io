@@ -87,6 +87,7 @@
 <p>My setup included a Teensy microcontroller and an addressable LED strip. I determined the maximum current draw of the LED strip + controller to be about 4 Amps. I decided to buy an 8 Amp power supply, in case I wanted to borrow power to run anything else nearby (like a Raspberry Pi).</p>
 <p>The circuit was designed on a breadboard and eventually soldered onto a prototyping board.  The circuit included a power switch, and a MIDI port with the required components.  The power supply is routed to a terminal block, which is routed to the prototype board.</p>
 <div id=Programming class="section-title has-background-lighter"><h3>Programming</h3></div>
+<p><a href="https://github.com/cjhamby/led_strip">Click here to view the code on Github</a></p>
 <p>When I began this project, I had just finished an Embedded Systems course at NC State.  In that course, we learned how to program in C, and I wanted to learn about the popular C++.  I also wanted to know what was going on in the code, so I opted to create my own libraries where practical.</p>
 <p>The first thing I had to do was find a work environment (IDE) to keep files organized and communicate with the microcontroller. The Teensy MCU boards are compatible with the Arduino IDE, but I found a better solution with Visual Studio Code + PlatformIO. VS Code is a general-purpose code editing environment.  PlatformIO is an extension that uploads the program to the microcontroller.</p>
 <p>I began my code by writing functions to communicate with the LED strip.  The strip had a 2-wire SPI interface.  Using an SPI library made it easy to send data to the strip.</p>
@@ -109,10 +110,10 @@
 </tr>
 <tr>
 <td>LED_STRIP</td>
-<td>A class with the top-level LED Strip object and functions</td>
+<td>A class to hold and manipulate the linked list</td>
 </tr>
 <tr>
-<td>LED_STRIP_CONTROLLER</td>
+<td>LED_CONTROLLER</td>
 <td>An object that controls what the LED_STRIP object does</td>
 </tr>
 </tbody>
