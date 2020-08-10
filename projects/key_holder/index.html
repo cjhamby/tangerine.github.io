@@ -1,0 +1,235 @@
+<!DOCTYPE html5>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>
+        
+             Key Holder | 
+        
+        Christopher Hamby
+    </title>
+    <meta name="description" content="Replacement Key Fob Housing">
+    <link rel="canonical" href="cjhamby.github.io/projects/key_holder/" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet"> 
+    
+    <script src=/cjhamby.github.io/js/modal_img.js></script>
+    
+    <link rel="stylesheet" href="/cjhamby.github.io/css/style.css" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head><body><header>
+    <nav class="navbar" role="navigation">
+    <div class="container">
+
+        <div class="navbar-brand">
+
+            <a href="/" title="home" class="navbar-item">
+                <span class="logo"><h1>Christopher Hamby</h1></span>
+            </a>
+
+            
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+
+        </div>
+
+
+        <div class="navbar-menu">
+
+            <div class="navbar-start">
+                
+                <a href="/cjhamby.github.io/gallery/" class="navbar-item">Gallery</a>
+                
+                <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
+                
+            </div>
+
+            <div class="navbar-end">
+                
+            </div>
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function () {
+        $(".navbar-burger").click(function () {
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+        })
+    })
+</script>
+</header><main>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Key Holder</h1>
+        <h2 class="subtitle">Replacement Key Fob Housing</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content">
+    <article class="container limited-width">
+      <div id=Introduction class="section-title has-background-lighter"><h3>Introduction</h3></div>
+<p>One day, the housing that held my friend&rsquo;s key fob together broke.  Fortunately, it fell apart in their bag and all of the pieces were contained.  The electronics inside the key cost a lot to replace.  And while a new case wouldn&rsquo;t have been as expensive, I wanted to attempt to 3D print a &ldquo;free&rdquo; solution.</p>
+<div class="subsection-title"><h4>The Issue</h4></div>
+
+
+
+
+
+
+    <figure class="is-centered">
+        <a onclick=open_modal(&#34;broken&#34;)> 
+            <img class="article-pic" src=/images/key_holder/broken_key.jpg alt=""> 
+        </a>
+        <figcaption class="has-text-link has-background-light">Key - Exploded View</figcaption>
+    </figure>
+
+
+
+
+<div id=broken class="modal">
+    <div class="modal-background" onclick=close_modal(&#34;broken&#34;)></div>
+    <div class="modal-content">
+        <img class="figure full-pic" src=/images/key_holder/broken_key.jpg alt="">
+        <div class="caption has-text-info">Key - Exploded View</div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;broken&#34;)></button>
+</div>
+<p>The plastic shell had two halves.  One was connected to the metal on the key, and the other snapped onto it.  The shell held the electronics that locked/unlocked doors and allowed the car to start.  Some tabs on the plastic shell had broken off, so the case couldn&rsquo;t snap together anymore.</p>
+<div class="subsection-title"><h4>The Solution</h4></div>
+
+
+
+
+
+
+    <figure class="is-centered">
+        <a onclick=open_modal(&#34;view1&#34;)> 
+            <img class="article-pic" src=/images/key_holder/view1.jpg alt=""> 
+        </a>
+        <figcaption class="has-text-link has-background-light">view1</figcaption>
+    </figure>
+
+
+
+
+<div id=view1 class="modal">
+    <div class="modal-background" onclick=close_modal(&#34;view1&#34;)></div>
+    <div class="modal-content">
+        <img class="figure full-pic" src=/images/key_holder/view1.jpg alt="">
+        <div class="caption has-text-info">view1</div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;view1&#34;)></button>
+</div>
+<p>Rather than try to print a replica of the shell piece, I designed a larger &ldquo;container&rdquo; that could hold the other pieces.  This shell implemented the buttons (which had gone missing by this point), and prevented the other pieces from escaping.</p>
+<p>I tried to keep the design as lightweight and form-fitting as possible. I like simplicity and using the fewest number of features. For this reason, I made the container and buttons into a single piece.</p>
+<div id=Design&#32;Process class="section-title has-background-lighter"><h3>Design Process</h3></div>
+<p>Two types of 3D modeling are <strong>solid modeling</strong> and <strong>wireframe modeling</strong> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.  Solid modeling is good for designs that use simple geometric shapes, such as my <a href="/projects/loom">loom project</a>.  I wanted the piece I printed to fit the form of the curved key, which would&rsquo;ve been a difficult task in solid modeling.  Wireframe modeling allows the user to create geometry based on sets of verteces.</p>
+<p>I used <a href="#">Blender</a> for the wireframe modeling.  All I had to do to create the geometry was upload a reference photo and trace vertices onto it.</p>
+
+
+
+
+
+
+    <figure class="is-centered">
+        <a onclick=open_modal(&#34;w_trace&#34;)> 
+            <img class="article-pic" src=/images/key_holder/wireframe_trace.png alt=""> 
+        </a>
+        <figcaption class="has-text-link has-background-light">wireframe_trace</figcaption>
+    </figure>
+
+
+
+
+<div id=w_trace class="modal">
+    <div class="modal-background" onclick=close_modal(&#34;w_trace&#34;)></div>
+    <div class="modal-content">
+        <img class="figure full-pic" src=/images/key_holder/wireframe_trace.png alt="">
+        <div class="caption has-text-info">wireframe_trace</div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;w_trace&#34;)></button>
+</div>
+<p>I tried to keep the form simple with as few vertices as needed.  On the inside of the key, I marked where the buttons and locating tab were.</p>
+<p>Once the mesh had the correct shape, it needed to be dimensioned.  I opened it in <a href="#">Fusion 360</a> to achieve this.  I set the scale by measuring the key at a couple of points with calipers.  I then printed a test plate to ensure the geometry matched up.</p>
+
+
+
+
+
+
+    <figure class="is-centered">
+        <a onclick=open_modal(&#34;t_fit&#34;)> 
+            <img class="article-pic" src=/images/key_holder/test_fit_1.png alt=""> 
+        </a>
+        <figcaption class="has-text-link has-background-light">test_fit_1</figcaption>
+    </figure>
+
+
+
+
+<div id=t_fit class="modal">
+    <div class="modal-background" onclick=close_modal(&#34;t_fit&#34;)></div>
+    <div class="modal-content">
+        <img class="figure full-pic" src=/images/key_holder/test_fit_1.png alt="">
+        <div class="caption has-text-info">test_fit_1</div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;t_fit&#34;)></button>
+</div>
+<p>After successfully fitting the part, I added a few features.  The first was a slot to hold the metal portion of the key.  The metal was attached to the back half of the plastic.  Holding the metal key also held the plastic in place.  But, holding it in only one place wasn&rsquo;t secure enough.  I added a tab to hold the other end of the plastic.</p>
+
+
+
+
+
+
+    <figure class="is-centered">
+        <a onclick=open_modal(&#34;view2&#34;)> 
+            <img class="article-pic" src=/images/key_holder/view2.jpg alt=""> 
+        </a>
+        <figcaption class="has-text-link has-background-light">view2</figcaption>
+    </figure>
+
+
+
+
+<div id=view2 class="modal">
+    <div class="modal-background" onclick=close_modal(&#34;view2&#34;)></div>
+    <div class="modal-content">
+        <img class="figure full-pic" src=/images/key_holder/view2.jpg alt="">
+        <div class="caption has-text-info">view2</div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;view2&#34;)></button>
+</div>
+<p>The face of the printed part replaces where the buttons used to be.  The plastic is thin enough to be pressed down easily. At the buttons, I added small circular nubs to make pressing them even easier.</p>
+<div id=Results class="section-title has-background-lighter"><h3>Results</h3></div>
+<p>It&rsquo;s been a few months, and the key holder seems to be working fine. This design wasn&rsquo;t my first one. Compared to earlier iterations, this design performs better and holds the key much more securely.</p>
+<p>I enjoyed learning about wireframe modeling and prototyping.  I&rsquo;m not sure that my design is better than buying a low-cost replacement housing, but the experience made the process worthwhile.</p>
+<div id=References class="section-title has-background-lighter"><h3>References</h3></div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://all3dp.com/2/types-of-3d-modeling/">Types Of 3D Modeling</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </article>
+  </section>
+
+        </main></body>
+</html>
