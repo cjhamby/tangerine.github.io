@@ -10,18 +10,28 @@
     </title>
     <meta name="description" content="A 3D Printing Design Project">
     <link rel="canonical" href="cjhamby.github.io/projects/loom/" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> 
+
     
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet"> 
     
+    
+    
+    
+    <link rel="stylesheet" href=/cjhamby.github.io/css/mybulma.css />
+    <link rel="stylesheet" href=/cjhamby.github.io/css/style.css />
+
+    
+    
     <script src=/cjhamby.github.io/js/modal_img.js></script>
     
-    <link rel="stylesheet" href="/cjhamby.github.io/css/style.css" />
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script>
+    <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css" />
+     
 </head><body><header>
     <nav class="navbar" role="navigation">
     <div class="container">
@@ -80,8 +90,10 @@
   </section>
 
   <section class="section content">
-    <article class="container limited-width">
-      <div id=Introduction class="section-title has-background-lighter"><h3>Introduction</h3></div>
+    <article class="container project-page">
+      <div class="section-title" id=Introduction>
+    <h3 class="title">Introduction</h3>
+</div>
 <p>In college I became interested in learning how to weave. My first loom was a model known as an Inkle Loom that my dad and I built using lumber and wooden dowels. It produced straps no wider than 4&rdquo;, that were durable and well-suited for guitars, cameras, and belts. This was an excellent beginner loom that taught me many of the fundamentals of the craft.  Eventually, though, I wanted to start weaving wider fabrics.</p>
 <p>When I bought a 3D printer, one of my first projects was to design a wider loom.  After seeing similar looms online and in stores, I had a basic idea of what I would be making. The new design would be a “rigid-heddle” loom. These looms are simple and effective at quickly producing fabrics around 12&rdquo; wide.</p>
 
@@ -90,25 +102,32 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;loom1&#34;)> 
-            <img class="article-pic" src=/images/loom/loom1.jpg alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Finished Loom</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;loom1&#34;)>
+        <img src=/images/loom/loom1.jpg alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Finished Loom</figcaption>
+</figure>
 
 
 
 <div id=loom1 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;loom1&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/loom1.jpg alt="">
-        <div class="caption has-text-info">Finished Loom</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;loom1&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/loom1.jpg alt="">                           
+            </div>
+            <div class="caption has-text-info">Finished Loom</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;loom1&#34;)></button>
 </div>
-<div id=Design&#32;Considerations class="section-title has-background-lighter"><h3>Design Considerations</h3></div>
+<div class="section-title" id=Design&#32;Considerations>
+    <h3 class="title">Design Considerations</h3>
+</div>
 <p>Some of the qualities that I wanted the loom to have were:</p>
 <table>
 <thead>
@@ -145,7 +164,9 @@
 </tbody>
 </table>
 <p>Many of the parts were going to be 3D printed, but printing the whole assembly wouldn&rsquo;t be time or money efficient. To reduce the cost of filament, I opted for some hardware. The frame is made of wooden dowels and 3D printed corner assemblies. The dowels were chosen for their low cost, smoothness, and availability at hardware stores.</p>
-<p><div id=Loom&#32;Design class="section-title has-background-lighter"><h3>Loom Design</h3></div>
+<p><div class="section-title" id=Loom&#32;Design>
+    <h3 class="title">Loom Design</h3>
+</div>
 <div class="subsection-title"><h4>Frame</h4></div></p>
 <p>The design process began with creating the loom&rsquo;s rectangular frame.  Each side of the loom is made of two dowel rods (called the frame dowels) held in place by 3D printed corner brackets.
 
@@ -154,23 +175,28 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;3D_Model&#34;)> 
-            <img class="article-pic" src=/images/loom/3D_Model.png alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">3D Model of the Loom</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;3D_Model&#34;)>
+        <img src=/images/loom/3D_Model.png alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">3D Model of the Loom</figcaption>
+</figure>
 
 
 
 <div id=3D_Model class="modal">
     <div class="modal-background" onclick=close_modal(&#34;3D_Model&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/3D_Model.png alt="">
-        <div class="caption has-text-info">3D Model of the Loom</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;3D_Model&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/3D_Model.png alt="">                           
+            </div>
+            <div class="caption has-text-info">3D Model of the Loom</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;3D_Model&#34;)></button>
 </div>
 (Click on a photo to enlarge it)</p>
 <p>To make the frame size adjustable, the frame dowels are clamped into place rather than glued. The width of the loom is easily adjusted by loosening the clamp and sliding the dowels to the desired position.</p>
@@ -181,23 +207,28 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;3D_Corner1&#34;)> 
-            <img class="article-pic" src=/images/loom/3D_Corner.png alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Corner Bracket Model, Assembled</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;3D_Corner1&#34;)>
+        <img src=/images/loom/3D_Corner.png alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Corner Bracket Model, Assembled</figcaption>
+</figure>
 
 
 
 <div id=3D_Corner1 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;3D_Corner1&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/3D_Corner.png alt="">
-        <div class="caption has-text-info">Corner Bracket Model, Assembled</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;3D_Corner1&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/3D_Corner.png alt="">                           
+            </div>
+            <div class="caption has-text-info">Corner Bracket Model, Assembled</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;3D_Corner1&#34;)></button>
 </div>
 
 
@@ -205,23 +236,28 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;3D_Corner2&#34;)> 
-            <img class="article-pic" src=/images/loom/3D_Corner_Exploded.png alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Corner Bracket Model, Exploded</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;3D_Corner2&#34;)>
+        <img src=/images/loom/3D_Corner_Exploded.png alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Corner Bracket Model, Exploded</figcaption>
+</figure>
 
 
 
 <div id=3D_Corner2 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;3D_Corner2&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/3D_Corner_Exploded.png alt="">
-        <div class="caption has-text-info">Corner Bracket Model, Exploded</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;3D_Corner2&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/3D_Corner_Exploded.png alt="">                           
+            </div>
+            <div class="caption has-text-info">Corner Bracket Model, Exploded</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;3D_Corner2&#34;)></button>
 </div>
 
 
@@ -229,23 +265,28 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;loom2&#34;)> 
-            <img class="article-pic" src=/images/loom/loom2.jpg alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Corner Bracket Printed</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;loom2&#34;)>
+        <img src=/images/loom/loom2.jpg alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Corner Bracket Printed</figcaption>
+</figure>
 
 
 
 <div id=loom2 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;loom2&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/loom2.jpg alt="">
-        <div class="caption has-text-info">Corner Bracket Printed</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;loom2&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/loom2.jpg alt="">                           
+            </div>
+            <div class="caption has-text-info">Corner Bracket Printed</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;loom2&#34;)></button>
 </div></p>
 <div class="subsection-title"><h4>Weaving Mechanism</h4></div>
 <p>With a frame in place, the next step was to mount the weaving mechanism.  In a nutshell, here&rsquo;s how the weaving mechanism works:</p>
@@ -277,26 +318,33 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;loom3&#34;)> 
-            <img class="article-pic" src=/images/loom/loom3.jpg alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Apron Rods and the Shed</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;loom3&#34;)>
+        <img src=/images/loom/loom3.jpg alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Apron Rods and the Shed</figcaption>
+</figure>
 
 
 
 <div id=loom3 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;loom3&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/loom3.jpg alt="">
-        <div class="caption has-text-info">Apron Rods and the Shed</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;loom3&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/loom3.jpg alt="">                           
+            </div>
+            <div class="caption has-text-info">Apron Rods and the Shed</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;loom3&#34;)></button>
 </div>
 <p>The heddle rests on <strong>heddle mounts</strong> which hold it in a raised or lowered position. The mounts are able to slide along the frame dowels. It’s easiest to pass the shuttle through the shed created immediately below the heddle. Allowing the heddle mounts to slide closer to the weaver is convenient. Moving the heddle further from the weaver increases the working area, which allows more weaving without needing to wind the warp dowels as often.</p>
-<div id=Results class="section-title has-background-lighter"><h3>Results</h3></div>
+<div class="section-title" id=Results>
+    <h3 class="title">Results</h3>
+</div>
 <p>The loom design is successful, and meets all of the criteria described in the table above.  The frame is rigid, the warp dowels clamp down easily, and the heddle moves easily back and forth. I left the dowels as long as possible, in case I wanted to adjust the frame size in the future. They could easily be trimmed flush with the corners to give the loom a more &ldquo;finished&rdquo; look.</p>
 <p>The woven fabric is thinner than the straps woven on the inkle loom.  One neat thing is that, while the inkle loom straps only show the warp threads, the fabric from this loom shows warp and weft threads to create a grid.  The fabric below was produced on the loom:</p>
 <p>
@@ -305,23 +353,28 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;weave1&#34;)> 
-            <img class="article-pic" src=/images/loom/weave1.jpg alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Woven Fabric 1</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;weave1&#34;)>
+        <img src=/images/loom/weave1.jpg alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Woven Fabric 1</figcaption>
+</figure>
 
 
 
 <div id=weave1 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;weave1&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/weave1.jpg alt="">
-        <div class="caption has-text-info">Woven Fabric 1</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;weave1&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/weave1.jpg alt="">                           
+            </div>
+            <div class="caption has-text-info">Woven Fabric 1</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;weave1&#34;)></button>
 </div>
 
 
@@ -329,25 +382,32 @@
 
 
 
-    <figure class="is-centered">
-        <a onclick=open_modal(&#34;weave2&#34;)> 
-            <img class="article-pic" src=/images/loom/weave2.jpg alt=""> 
-        </a>
-        <figcaption class="has-text-link has-background-light">Woven Fabric 2</figcaption>
-    </figure>
 
+
+<figure>
+    
+    <div class="image zoom-out-pic" onclick=open_modal(&#34;weave2&#34;)>
+        <img src=/images/loom/weave2.jpg alt=""> 
+    </div>
+    <figcaption class="has-text-link has-background-light">Woven Fabric 2</figcaption>
+</figure>
 
 
 
 <div id=weave2 class="modal">
     <div class="modal-background" onclick=close_modal(&#34;weave2&#34;)></div>
-    <div class="modal-content">
-        <img class="figure full-pic" src=/images/loom/weave2.jpg alt="">
-        <div class="caption has-text-info">Woven Fabric 2</div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;weave2&#34;)></button>
+        <div class="modal-content">
+            <div class="image zoom-in-pic">
+                <img src=/images/loom/weave2.jpg alt="">                           
+            </div>
+            <div class="caption has-text-info">Woven Fabric 2</div>       
+        </div>
+        
+        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;weave2&#34;)></button>
 </div></p>
-<p><div id=Final&#32;Thoughts class="section-title has-background-lighter"><h3>Final Thoughts</h3></div>
+<p><div class="section-title" id=Final&#32;Thoughts>
+    <h3 class="title">Final Thoughts</h3>
+</div>
 I would like my next loom to include more advanced features such as multiple heddles. This loom is good for producing simple weaves, but isn’t suited for producing complex patterns. Another project for another day… 🙂</p>
 
     </article>

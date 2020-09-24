@@ -10,18 +10,28 @@
     </title>
     <meta name="description" content="">
     <link rel="canonical" href="cjhamby.github.io/gallery/" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> 
+
     
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet"> 
     
+    
+    
+    
+    <link rel="stylesheet" href=/cjhamby.github.io/css/mybulma.css />
+    <link rel="stylesheet" href=/cjhamby.github.io/css/style.css />
+
+    
+    
     <script src=/cjhamby.github.io/js/modal_img.js></script>
     
-    <link rel="stylesheet" href="/cjhamby.github.io/css/style.css" />
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script>
+    <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css" />
+     
 </head><body><header>
     <nav class="navbar" role="navigation">
     <div class="container">
@@ -87,39 +97,93 @@
 </div>
 
 
+<div id="gallery_goes_here"></div>
 
+<div class="section">
+    <div class="container" id="gallery_pag"></div>
+</div>
+
+
+<script>
+
+
+
+
+function getPhotos(){
+    var urls = [   
+                
+                    
+                        "/cjhamby.github.io/gallery/I_MADE_A_WELL.png",
+                    
+                        "/cjhamby.github.io/gallery/buffalo.png",
+                    
+                        "/cjhamby.github.io/gallery/cactus.png",
+                    
+                        "/cjhamby.github.io/gallery/honeybee.png",
+                    
+                        "/cjhamby.github.io/gallery/porchlight.png",
+                    
+                 
+                ];
+    return urls;
+}
+
+
+function formatPhoto(data){
     
-        <figure class="container">
-            <a href=/cjhamby.github.io/gallery/I_MADE_A_WELL.png> 
-                <img class="gallery-pic" src=/cjhamby.github.io/gallery/I_MADE_A_WELL.png alt=""> 
-            </a>
-        </figure>
-    
-        <figure class="container">
-            <a href=/cjhamby.github.io/gallery/buffalo.png> 
-                <img class="gallery-pic" src=/cjhamby.github.io/gallery/buffalo.png alt=""> 
-            </a>
-        </figure>
-    
-        <figure class="container">
-            <a href=/cjhamby.github.io/gallery/cactus.png> 
-                <img class="gallery-pic" src=/cjhamby.github.io/gallery/cactus.png alt=""> 
-            </a>
-        </figure>
-    
-        <figure class="container">
-            <a href=/cjhamby.github.io/gallery/honeybee.png> 
-                <img class="gallery-pic" src=/cjhamby.github.io/gallery/honeybee.png alt=""> 
-            </a>
-        </figure>
-    
-        <figure class="container">
-            <a href=/cjhamby.github.io/gallery/porchlight.png> 
-                <img class="gallery-pic" src=/cjhamby.github.io/gallery/porchlight.png alt=""> 
-            </a>
-        </figure>
+    var temp = "";
+    temp+="<div class=\"column is-4\">"; 
+    temp+="<a href=\"" + data + "\">";
+    temp+="<img src=\"" + data + "\" alt=\"\">"; 
+    temp+="</a>";
+    temp+="</div>";
+    return temp;
+}
+
+
+
+
+function formatGallery(data){
+    var i;
+    var temp = "";
+    temp+="<div class=\"section\">";
+    temp+="<div class=\"container gallery\">";
+    temp+="<div class=\"columns\">";
+
+    for(i=0; i<data.length; i++){
+        temp += formatPhoto(data[i]);
+    }
+    temp+="</div>";
+    temp+="</div>";
+    temp+="</div>";
+    return temp;
+}
+
+
+
+
+$(document).ready(function(){
     
 
+    $("#gallery_pag").pagination({
+    
+        dataSource: getPhotos(),
+    
+        pageSize: 3,
+        showPageNumbers: true,
+        showNavigator: false,
+    
+        className: 'paginationjs-theme-yellow paginationjs-big',
+        
+ 
+        callback: function(data, pagination){
+            var html = formatGallery(data);
+            $("#gallery_goes_here").html(html);
+        }
+    })
+})
+
+</script>
 
 
         </main></body>

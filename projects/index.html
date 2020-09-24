@@ -10,18 +10,28 @@
     </title>
     <meta name="description" content="">
     <link rel="canonical" href="cjhamby.github.io/projects/" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> 
+
     
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet"> 
     
+    
+    
+    
+    <link rel="stylesheet" href=/cjhamby.github.io/css/mybulma.css />
+    <link rel="stylesheet" href=/cjhamby.github.io/css/style.css />
+
+    
+    
     <script src=/cjhamby.github.io/js/modal_img.js></script>
     
-    <link rel="stylesheet" href="/cjhamby.github.io/css/style.css" />
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script>
+    <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css" />
+     
 </head><body><header>
     <nav class="navbar" role="navigation">
     <div class="container">
@@ -79,114 +89,198 @@
   </section>
 
 <div class="container">
-<div class="section"><p>These are some of the projects that I&rsquo;ve worked on.</p>
+  <div class="section">
+    <p>These are some of the projects that I&rsquo;ve worked on.</p>
 <p>Click on an image to zoom in.  Click anywhere on the screen to zoom out.</p>
+
+  </div>
+<div id="gallery_goes_here">gallery</div>
+
+<div class="section">
+    <div class="container" id="gallery_pag"></div>
 </div>
 
 
 
 
 
-
-<div class="columns">
-
-    <div class="column is-one-third">
-
-<a href=/cjhamby.github.io/projects/key_holder/>
-<div class="card">
-
-
-
-<div class="card-image">
-    <figure class="image is-4by3">
-        <image src=/images/key_holder/view1.jpg alt=""></image>
-    </figure>
-</div>
-
-<div class="title is-4">Key Holder</div>
-<div class="subtitle is-6">Posted August 2, 2020</div>
-<div class="card-content">Replacement Key Fob Housing</div>
-<div class="card-footer">
+<script>
+    var num_pages = 0;
+    var urls   = [];
+    var titles = [];
+    var dates  = [];
+    var descs  = [];
+    var tags   = [];
+    var imgs   = [];
     
+    
+    
+    function populate_page_data(){
         
-            <div class="tag">3D Printing</div>
+          
+            num_pages++;
+            urls.push(     "/cjhamby.github.io/projects/key_holder/"  );
+            titles.push(   "Key Holder"               );
+            descs.push(    "Replacement Key Fob Housing",        );
+            imgs.push(     "/images/key_holder/view1.jpg" );
+
+            dates.push( [  2  , 
+                          "August" , 
+                           2020   ]  );
+            
+            tags.push(  [ 
+                            
+                              "3D Printing" ,
+                            
+                              "Modeling" ,
+                            
+                              "Prototyping" ,
+                            
+                                          ]  );
+            
+          
+            num_pages++;
+            urls.push(     "/cjhamby.github.io/projects/midi_led_strip/"  );
+            titles.push(   "MIDI LED Strip"               );
+            descs.push(    "Using a synthesizer to control lights",        );
+            imgs.push(     "/images/LED_Strip/rainbow.jpg" );
+
+            dates.push( [  1  , 
+                          "August" , 
+                           2020   ]  );
+            
+            tags.push(  [ 
+                            
+                              "Embedded Systems" ,
+                            
+                              "C++" ,
+                            
+                              "MIDI" ,
+                            
+                              "Circuits" ,
+                            
+                                          ]  );
+            
+          
+            num_pages++;
+            urls.push(     "/cjhamby.github.io/projects/loom/"  );
+            titles.push(   "Rigid Heddle Loom"               );
+            descs.push(    "A 3D Printing Design Project",        );
+            imgs.push(     "/images/loom/3D_Model.png" );
+
+            dates.push( [  17  , 
+                          "June" , 
+                           2019   ]  );
+            
+            tags.push(  [ 
+                            
+                              "Modeling" ,
+                            
+                              "3D Printing" ,
+                            
+                              "Prototyping" ,
+                            
+                                          ]  );
+            
+          
         
-            <div class="tag">Modeling</div>
+    }
+
+
+    function make_card_at_index( i ){
+        var html = "";
+        html += format_card(urls[i], titles[i], dates[i], descs[i], tags[i], imgs[i]);
+        return html;
+    }
+
+
+    function make_cards_of_data( data ){
+        var i;
+        var html = "";
+        html += "<div class=\"section\">";
+        html += "<div class=\"columns\">";
         
-            <div class="tag">Prototyping</div>
-        
+        for(i=0; i<data.length; i++){
+            html += "<div class=\"column is-4\">";
+            html += make_card_at_index(data[i]);
+            html += "</div>";
+        }
+
+        html += "</div>"
+        html += "</div>"
+        return html;
+    }
+
     
 
-</div>
-</div>
-</a></div>
-
-    <div class="column is-one-third">
-
-<a href=/cjhamby.github.io/projects/midi_led_strip/>
-<div class="card">
-
-
-
-<div class="card-image">
-    <figure class="image is-4by3">
-        <image src=/images/LED_Strip/rainbow.jpg alt=""></image>
-    </figure>
-</div>
-
-<div class="title is-4">MIDI LED Strip</div>
-<div class="subtitle is-6">Posted August 1, 2020</div>
-<div class="card-content">Using a synthesizer to control lights</div>
-<div class="card-footer">
     
-        
-            <div class="tag">Embedded Systems</div>
-        
-            <div class="tag">C&#43;&#43;</div>
-        
-            <div class="tag">MIDI</div>
-        
-            <div class="tag">Circuits</div>
-        
+    function format_card(u, title, date, desc, tag, img){
+      var i = 0;
+      var html = "";
+      var url =            "\"" + u               + "\"";
+      var img =            "\"" + img             + "\"";
+      var fig_class =      "\"" + "image is-4by3" + "\"";
+      var title_class =    "\"" + "title is-4"    + "\"";
+      var subtitle_class = "\"" + "subtitle is-6" + "\"";
+
+      html += "<a href=" + url + ">                     \n";
+      html += "  <div class=\"card\">                   \n";
+      html += "    <div class=\"card-image\">           \n";
+      html += "      <figure class=" + fig_class + ">   \n";
+      html += "        <img src=" + img + " alt=\"\">   \n";
+      html += "      </figure>                          \n";
+      html += "    </div>                               \n";
+
+      html += "    <div class=" + title_class + ">" + title + "</div>    \n"; 
+      html += "    <div class=" + subtitle_class + ">";
+      html += "      Posted";
+      html +=        " "  + date[1];
+      html +=        " "  + date[0];
+      html +=        ", " + date[2];
+      html += "    </div>                                                \n";
+      html += "    <div class=\"card-content\">" + desc + "</div>        \n";
+      html += "    <div class=\"card-footer\">                           \n";
+
+      for(i=0; i<tag.length; i++){
+          html += "  <div class=\"tag\">" + tag[i] + "</div>            \n";
+      }
+      html += "    </div> \n";
+      html += "  </div>   \n";
+      html += "</a>       \n";
+      return html;
+    } 
+
+
     
-
-</div>
-</div>
-</a></div>
-
-    <div class="column is-one-third">
-
-<a href=/cjhamby.github.io/projects/loom/>
-<div class="card">
-
-
-
-<div class="card-image">
-    <figure class="image is-4by3">
-        <image src=/images/loom/3D_Model.png alt=""></image>
-    </figure>
-</div>
-
-<div class="title is-4">Rigid Heddle Loom</div>
-<div class="subtitle is-6">Posted June 17, 2019</div>
-<div class="card-content">A 3D Printing Design Project</div>
-<div class="card-footer">
+    $(document).ready(function(){
+      populate_page_data();
     
-        
-            <div class="tag">Modeling</div>
-        
-            <div class="tag">3D Printing</div>
-        
-            <div class="tag">Prototyping</div>
-        
     
+      $("#gallery_pag").pagination({
+      
+        dataSource: function(done){
+            var result = [];
+            for(var i=0; i<num_pages; i++){
+                result.push(i);
+            }
+            done(result);
+        },
+      
+        pageSize: 3,
+        showPageNumbers: true,
+        showNavigator: false,
+      
+        className: 'paginationjs-theme-yellow paginationjs-big',
+        
+ 
+        callback: function(data, pagination){
+          var html = make_cards_of_data(data);
+          $("#gallery_goes_here").html(html);
+        }
+      })
+    })
 
-</div>
-</div>
-</a></div>
-
-</div>
-</div>
+    </script>
 
         </main></body>
 </html>

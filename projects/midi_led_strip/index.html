@@ -10,18 +10,28 @@
     </title>
     <meta name="description" content="Using a synthesizer to control lights">
     <link rel="canonical" href="cjhamby.github.io/projects/midi_led_strip/" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> 
+
     
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet"> 
     
+    
+    
+    
+    <link rel="stylesheet" href=/cjhamby.github.io/css/mybulma.css />
+    <link rel="stylesheet" href=/cjhamby.github.io/css/style.css />
+
+    
+    
     <script src=/cjhamby.github.io/js/modal_img.js></script>
     
-    <link rel="stylesheet" href="/cjhamby.github.io/css/style.css" />
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script>
+    <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css" />
+     
 </head><body><header>
     <nav class="navbar" role="navigation">
     <div class="container">
@@ -80,13 +90,19 @@
   </section>
 
   <section class="section content">
-    <article class="container limited-width">
-      <div id=Introduction class="section-title has-background-lighter"><h3>Introduction</h3></div>
+    <article class="container project-page">
+      <div class="section-title" id=Introduction>
+    <h3 class="title">Introduction</h3>
+</div>
 <p>Everybody loves RGB LEDs.  There isn&rsquo;t a <em>single thing</em> that couldn&rsquo;t benefit from having <em>more LEDS</em>. I remember watching a tv show as a child where a guitar player had LED lights on their amplifier that reacted to the music.  That idea stuck with me, and when I first got a synthesizer I decided to try accomplishing something similar. I wanted something colorful and fully customizable, that could be programmed to react to music.  I decided on using a strip of LEDs as the light source.  There are plenty of commercially available LED strips, but I wanted to practice my coding and hardware skills.</p>
-<div id=Hardware class="section-title has-background-lighter"><h3>Hardware</h3></div>
+<div class="section-title" id=Hardware>
+    <h3 class="title">Hardware</h3>
+</div>
 <p>My setup included a Teensy microcontroller and an addressable LED strip. I determined the maximum current draw of the LED strip + controller to be about 4 Amps. I decided to buy an 8 Amp power supply, in case I wanted to borrow power to run anything else nearby (like a Raspberry Pi).</p>
 <p>The circuit was designed on a breadboard and eventually soldered onto a prototyping board.  The circuit included a power switch, and a MIDI port with the required components.  The power supply is routed to a terminal block, which is routed to the prototype board.</p>
-<div id=Programming class="section-title has-background-lighter"><h3>Programming</h3></div>
+<div class="section-title" id=Programming>
+    <h3 class="title">Programming</h3>
+</div>
 <p><a href="https://github.com/cjhamby/led_strip">Click here to view the code on Github</a></p>
 <p>When I began this project, I had just finished an Embedded Systems course at NC State.  In that course, we learned how to program in C, and I wanted to learn about the popular C++.  I also wanted to know what was going on in the code, so I opted to create my own libraries where practical.</p>
 <p>The first thing I had to do was find a work environment (IDE) to keep files organized and communicate with the microcontroller. The Teensy MCU boards are compatible with the Arduino IDE, but I found a better solution with Visual Studio Code + PlatformIO. VS Code is a general-purpose code editing environment.  PlatformIO is an extension that uploads the program to the microcontroller.</p>
@@ -134,19 +150,27 @@
 <li>(do nothing)</li>
 </ul>
 <p>To change between the programs, I added a physical button. The button triggers an ISR that cycles through a list of programs.  Programs can be enabled or disabled in the comments.</p>
-<div id=Circuit&#32;Building class="section-title has-background-lighter"><h3>Circuit Building</h3></div>
+<div class="section-title" id=Circuit&#32;Building>
+    <h3 class="title">Circuit Building</h3>
+</div>
 <p>The strip was functional, and it was time to interface it with music!  Two options came to mind.  The controller could receive MIDI messages from an instrument and use them to control the lights.  Alternatively, the controller could receive a signal from an audio port and act as a visualizer. Of course I had to try both!</p>
 <p>For the visualizer, a peak detector measured the loudness of an audio signal.  This was accomplished with a diode + capacitor circuit.  The output was received by an analog-read pin on the Teensy board.  A louder signal corresponded to more LEDs lighting up on the strip.</p>
 <p>The second program used MIDI to control the strip.  MIDI stands for Musical Instrument Digital Interface.  As the name suggests, MIDI is a standardized protocol for communication between musical instruments and computers.  Many synthesizers and digital pianos have MIDI capabilities.  MIDI messages tell data about the note, such as pitch and velocity (how hard the key is hit).</p>
 <p>I found a library that contained reliable functions for reading these messages.   The program that I wrote mapped the MIDI note value to the LED Strip.  When multiple keys on the synthesizer were pressed, multiple LEDs would light up.</p>
-<div id=Results class="section-title has-background-lighter"><h3>Results</h3></div>
+<div class="section-title" id=Results>
+    <h3 class="title">Results</h3>
+</div>
 <p>The video below shows the LED strip reacting to MIDI input:</p>
 <p><a href="https://gfycat.com/ifr/WeeklyFatalEquine">GFYCAT Video</a></p>
 <p>(be sure to un-mute in the bottom right corner)</p>
-<div id=Conclusion&#32;and&#32;Next&#32;Steps class="section-title has-background-lighter"><h3>Conclusion and Next Steps</h3></div>
+<div class="section-title" id=Conclusion&#32;and&#32;Next&#32;Steps>
+    <h3 class="title">Conclusion and Next Steps</h3>
+</div>
 <p>This project was valuable mainly as an opportunity to work with C++.  It was my first real exposure to the language, and I learned a lot about how it differs from C.  The MIDI reactive program is neat, but isn&rsquo;t something I use regularly.  The strip is more useful as a bright desk light or as a colored background light.  I 3D printed some mounts that diffuse the LED light through glue sticks to reduce the harshness of the brighter colors.</p>
 <p>There are some things I want to do with the project in the future.  Currently the circuit is mounted on my workbench.  Now that I have a 3D printer, I would like to create better housing for the circuitry.  I would also like to add a power input jack so the strip isn&rsquo;t constrained to one location.  Lastly, I would like to improve the visualizer program by constructing filters to obtain some frequency data.</p>
-<p><div id=External&#32;Links class="section-title has-background-lighter"><h3>External Links</h3></div>
+<p><div class="section-title" id=External&#32;Links>
+    <h3 class="title">External Links</h3>
+</div>
 <a href="https://learn.sparkfun.com/tutorials/midi-tutorial/hardware--electronic-implementation">More info about MIDI</a></p>
 
     </article>
