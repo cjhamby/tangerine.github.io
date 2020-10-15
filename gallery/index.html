@@ -8,7 +8,7 @@
         
         Christopher Hamby
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="3D Art and Modeling">
     <link rel="canonical" href="cjhamby.github.io/gallery/" />
 
     
@@ -33,44 +33,50 @@
     <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css" />
      
 </head><body><header>
+
+<div class="hero is-warning is-bold">   
+    <div class="hero-body">
     <nav class="navbar" role="navigation">
-    <div class="container">
-
-        <div class="navbar-brand">
-
-            <a href="/" title="home" class="navbar-item">
-                <span class="logo"><h1>Christopher Hamby</h1></span>
-            </a>
-
-            
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-
-        </div>
-
-
-        <div class="navbar-menu">
-
-            <div class="navbar-start">
+        <div class="container">
+            <div class="navbar-brand">
                 
-                <a href="/cjhamby.github.io/gallery/" class="navbar-item">Gallery</a>
+                <a href="/" title="home" class="navbar-item">
+                    <span class="logo"><h1 class="title">Christopher Hamby</h1></span>
+                </a>
                 
-                <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
+
                 
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+
             </div>
 
-            <div class="navbar-end">
+
+            <div class="navbar-menu">
+
+                <div class="navbar-start">
+                    
+                    <a href="/cjhamby.github.io/blog/" class="navbar-item">Blog</a>
+                    
+                    <a href="/cjhamby.github.io/gallery/" class="navbar-item">Gallery</a>
+                    
+                    <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
+                    
+                </div>
+
+                <div class="navbar-end">
+                    
+                </div>
                 
             </div>
-            
         </div>
-    </div>
-</nav>
-
+    </nav>
+</div>
+</div>
 <script>
     $(document).ready(function () {
         $(".navbar-burger").click(function () {
@@ -79,35 +85,21 @@
         })
     })
 </script>
-</header><main>
-<section class="hero is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">Gallery</h1>
-      </div>
-    </div>
-</section>
+</header><main aria-role="main">
 
+<section class="section">
+  <div class="container">
+    <div class="title">Gallery</div>
+    <p>I&rsquo;ve been learning how to use <a href="https://www.blender.org">Blender</a> for 3D modeling and animation.  Here are some things that I&rsquo;ve made!</p>
 
-<div class="container">
-    <div class="section">
-        <p>I&rsquo;ve been learning how to use <a href="https://www.blender.org">Blender</a> for 3D modeling and animation.  Here are some things that I&rsquo;ve made!</p>
-
-    </div>
-</div>
 
 
 <div id="gallery_goes_here"></div>
 
-<div class="section">
-    <div class="container" id="gallery_pag"></div>
-</div>
+<div class="container" id="gallery_pag"></div>
 
 
 <script>
-
-
-
 
 function getPhotos(){
     var urls = [   
@@ -184,6 +176,9 @@ $(document).ready(function(){
 })
 
 </script>
+
+</div>
+</section>
 
 
         </main></body>

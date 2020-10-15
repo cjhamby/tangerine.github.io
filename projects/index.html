@@ -8,7 +8,7 @@
         
         Christopher Hamby
     </title>
-    <meta name="description" content="">
+    <meta name="description" content="Things I&#39;ve worked on">
     <link rel="canonical" href="cjhamby.github.io/projects/" />
 
     
@@ -33,44 +33,50 @@
     <link rel="stylesheet" href="https://pagination.js.org/dist/2.1.5/pagination.css" />
      
 </head><body><header>
+
+<div class="hero is-warning is-bold">   
+    <div class="hero-body">
     <nav class="navbar" role="navigation">
-    <div class="container">
-
-        <div class="navbar-brand">
-
-            <a href="/" title="home" class="navbar-item">
-                <span class="logo"><h1>Christopher Hamby</h1></span>
-            </a>
-
-            
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-
-        </div>
-
-
-        <div class="navbar-menu">
-
-            <div class="navbar-start">
+        <div class="container">
+            <div class="navbar-brand">
                 
-                <a href="/cjhamby.github.io/gallery/" class="navbar-item">Gallery</a>
+                <a href="/" title="home" class="navbar-item">
+                    <span class="logo"><h1 class="title">Christopher Hamby</h1></span>
+                </a>
                 
-                <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
+
                 
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+
             </div>
 
-            <div class="navbar-end">
+
+            <div class="navbar-menu">
+
+                <div class="navbar-start">
+                    
+                    <a href="/cjhamby.github.io/blog/" class="navbar-item">Blog</a>
+                    
+                    <a href="/cjhamby.github.io/gallery/" class="navbar-item">Gallery</a>
+                    
+                    <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
+                    
+                </div>
+
+                <div class="navbar-end">
+                    
+                </div>
                 
             </div>
-            
         </div>
-    </div>
-</nav>
-
+    </nav>
+</div>
+</div>
 <script>
     $(document).ready(function () {
         $(".navbar-burger").click(function () {
@@ -79,28 +85,18 @@
         })
     })
 </script>
-</header><main>
-<section class="hero is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">Projects</h1>
-      </div>
-    </div>
-  </section>
-
-<div class="container">
-  <div class="section">
+</header><main aria-role="main">
+<section class="section">
+  <div class="container">
+    <div class="title">Projects</div>  
     <p>These are some of the projects that I&rsquo;ve worked on.</p>
-<p>Click on an image to zoom in.  Click anywhere on the screen to zoom out.</p>
-
-  </div>
-<div id="gallery_goes_here">gallery</div>
-
-<div class="section">
-    <div class="container" id="gallery_pag"></div>
-</div>
+<p>While reading an article, click on an image to zoom in.  Click anywhere on the screen to zoom out.</p>
 
 
+
+<div id="gallery_goes_here"></div>
+
+<div class="container" id="gallery_pag"></div>
 
 
 
@@ -112,8 +108,7 @@
     var descs  = [];
     var tags   = [];
     var imgs   = [];
-    
-    
+  
     
     function populate_page_data(){
         
@@ -280,7 +275,8 @@
       })
     })
 
-    </script>
+    </script></div>
+</section>
 
         </main></body>
 </html>
