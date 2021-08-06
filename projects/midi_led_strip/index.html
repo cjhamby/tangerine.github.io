@@ -90,126 +90,88 @@
 </script>
 </header>
         <main aria-role="main">
-<section class="section">
+<section class="section project-page">
   <div class="container">
     <h1 class="title">MIDI LED Strip</h1>
     <div class="content">
-      
-
-
-<div id="gallery_goes_here"></div>
-
-<div class="container" id="gallery_pag"></div>
-
-
-
-
-<script>
-
-var isVideoGallery = false;
-var numPerPage = 8; 
-var numPerRow = 4;  
-
-function getResources(){
-    var urls = getPhotos();
-    if (urls.length == 0) {
-        urls = getVideos();
-        isVideoGallery = true;
-        numPerPage = 2;     
-    }
-    return urls;
-}
-
-
-function getPhotos(){
-    var urls = [   
-                
-                ];
-    return urls;
-}
-
-function getVideos(){
-    var urls = [   
-                
-                ];
-    return urls;
-}
-
-
-function formatPhotoColumn(data){
-    
-    var temp = "";
-    temp+="<div class=\"column is-3\">"; 
-    temp+="<a href=\"" + data + "\">";
-    temp+="<img src=\"" + data + "\" alt=\"\">"; 
-    temp+="</a>";
-    temp+="</div>";
-    return temp;
-}
-
-function formatVideoColumn(data){
-    var temp = "";
-    temp+="<div class=\"column is-3\">"; 
-    temp+="<video controls>";
-    temp+="<source src=\"" + data + "\">";
-    temp+="Video Unsupported"; 
-    temp+="</video>"
-    temp+="</div>";
-    return temp;
-}
-
-
-function formatGalleryColumns(data){
-    var i;
-    var temp = "";
-    temp+="<div class=\"section\">";
-    temp+="<div class=\"container gallery\">";
-    temp+="<div class=\"columns is-centered\">";
-
-    for(i=0; i<data.length; i++){
-        
-        if(i>=numPerRow && (i)%numPerRow==0){
-            temp+="</div><div class=\"columns\">";
-        }
-        if(isVideoGallery){
-            temp += formatVideoColumn(data[i]);
-        } else {
-            temp += formatPhotoColumn(data[i]);
-        }
-    }
-    temp+="</div>";
-    temp+="</div>";
-    temp+="</div>";
-    return temp;
-}
-
-
-
-
-$(document).ready(function(){
-    
-
-    $("#gallery_pag").pagination({
-    
-        dataSource: getResources(),
-    
-        pageSize: numPerPage,
-        showPageNumbers: true,
-        showNavigator: false,
-    
-        className: 'paginationjs-theme-dark paginationjs-big',
-        
- 
-        callback: function(data, pagination){
-             var html = formatGalleryColumns(data);
-            
-            $("#gallery_goes_here").html(html);
-        }
-    })
-})
-
-</script>
-
+        <p>Everybody loves RGB LEDs.  There isn&rsquo;t a <em>single thing</em> that couldn&rsquo;t benefit from having <em>more LEDS</em>. I remember watching a tv show as a child where a guitar player had LED lights on their amplifier that reacted to the music.  That idea stuck with me, and when I first got a synthesizer I decided to try accomplishing something similar. I wanted something colorful and fully customizable, that could be programmed to react to music.  I decided on using a strip of LEDs as the light source.  There are plenty of commercially available LED strips, but I wanted to practice my coding and hardware skills.</p>
+<div class="section-title" id=Hardware>
+    <h3>Hardware</h3>
+</div>
+<p>My setup included a Teensy microcontroller and an addressable LED strip. I determined the maximum current draw of the LED strip + controller to be about 4 Amps. I decided to buy an 8 Amp power supply, in case I wanted to borrow power to run anything else nearby (like a Raspberry Pi).</p>
+<p>The circuit was designed on a breadboard and eventually soldered onto a prototyping board.  The circuit included a power switch, and a MIDI port with the required components.  The power supply is routed to a terminal block, which is routed to the prototype board.</p>
+<div class="section-title" id=Programming>
+    <h3>Programming</h3>
+</div>
+<p><a href="https://github.com/cjhamby/led_strip">Click here to view the code on Github</a></p>
+<p>When I began this project, I had just finished an Embedded Systems course at NC State.  In that course, we learned how to program in C, and I wanted to learn about the popular C++.  I also wanted to know what was going on in the code, so I opted to create my own libraries where practical.</p>
+<p>The first thing I had to do was find a work environment (IDE) to keep files organized and communicate with the microcontroller. The Teensy MCU boards are compatible with the Arduino IDE, but I found a better solution with Visual Studio Code + PlatformIO. VS Code is a general-purpose code editing environment.  PlatformIO is an extension that uploads the program to the microcontroller.</p>
+<p>I began my code by writing functions to communicate with the LED strip.  The strip had a 2-wire SPI interface.  Using an SPI library made it easy to send data to the strip.</p>
+<p>The real fun began when I started to create my own classes.  I wanted to develop a system of data structures that was dynamic and intuitive.  Through experimentation, trial and error, and a lot of re-writing code, I came to the following framework:</p>
+<table>
+<thead>
+<tr>
+<th>Data Struct</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LED_DATA</td>
+<td>A struct containing one LED&rsquo;s brightness and color data</td>
+</tr>
+<tr>
+<td>LED_NODE</td>
+<td>A node in a linked list which holds LED_DATA for each LED</td>
+</tr>
+<tr>
+<td>LED_STRIP</td>
+<td>A class to hold and manipulate the linked list</td>
+</tr>
+<tr>
+<td>LED_CONTROLLER</td>
+<td>An object that controls what the LED_STRIP object does</td>
+</tr>
+</tbody>
+</table>
+<p>To animate the LED strip, I used <strong>patterns</strong> and <strong>programs</strong>.</p>
+<p>A <strong>pattern</strong> describes the color of the LEDs. Put another way, this refers to the color data held in the LED_NODE linked list.  The main patterns I came up with were:</p>
+<ul>
+<li>A single color</li>
+<li>LEDs spaced evenly</li>
+<li>Two/three color gradients</li>
+<li>A rainbow gradient</li>
+</ul>
+<p>A <strong>program</strong> is how the controller manipulates the LED Strip. The programs could:</p>
+<ul>
+<li>fade LED brightness up/down</li>
+<li>transition smoothly between colors</li>
+<li>shift LED Data left, right, or away from the middle of the strip</li>
+<li>(do nothing)</li>
+</ul>
+<p>To change between the programs, I added a physical button. The button triggers an ISR that cycles through a list of programs.  Programs can be enabled or disabled in the comments.</p>
+<div class="section-title" id=Circuit&#32;Building>
+    <h3>Circuit Building</h3>
+</div>
+<p>The strip was functional, and it was time to interface it with music!  Two options came to mind.  The controller could receive MIDI messages from an instrument and use them to control the lights.  Alternatively, the controller could receive a signal from an audio port and act as a visualizer. Of course I had to try both!</p>
+<p>For the visualizer, a peak detector measured the loudness of an audio signal.  This was accomplished with a diode + capacitor circuit.  The output was received by an analog-read pin on the Teensy board.  A louder signal corresponded to more LEDs lighting up on the strip.</p>
+<p>The second program used MIDI to control the strip.  MIDI stands for Musical Instrument Digital Interface.  As the name suggests, MIDI is a standardized protocol for communication between musical instruments and computers.  Many synthesizers and digital pianos have MIDI capabilities.  MIDI messages tell data about the note, such as pitch and velocity (how hard the key is hit).</p>
+<p>I found a library that contained reliable functions for reading these messages.   The program that I wrote mapped the MIDI note value to the LED Strip.  When multiple keys on the synthesizer were pressed, multiple LEDs would light up.</p>
+<div class="section-title" id=Results>
+    <h3>Results</h3>
+</div>
+<p>The video below shows the LED strip reacting to MIDI input:</p>
+<p><a href="https://gfycat.com/ifr/WeeklyFatalEquine">GFYCAT Video</a></p>
+<p>(be sure to un-mute in the bottom right corner)</p>
+<div class="section-title" id=Conclusion&#32;and&#32;Next&#32;Steps>
+    <h3>Conclusion and Next Steps</h3>
+</div>
+<p>This project was valuable mainly as an opportunity to work with C++.  It was my first real exposure to the language, and I learned a lot about how it differs from C.  The MIDI reactive program is neat, but isn&rsquo;t something I use regularly.  The strip is more useful as a bright desk light or as a colored background light.  I 3D printed some mounts that diffuse the LED light through glue sticks to reduce the harshness of the brighter colors.</p>
+<p>There are some things I want to do with the project in the future.  Currently the circuit is mounted on my workbench.  Now that I have a 3D printer, I would like to create better housing for the circuitry.  I would also like to add a power input jack so the strip isn&rsquo;t constrained to one location.  Lastly, I would like to improve the visualizer program by constructing filters to obtain some frequency data.</p>
+<p><div class="section-title" id=External&#32;Links>
+    <h3>External Links</h3>
+</div>
+<a href="https://learn.sparkfun.com/tutorials/midi-tutorial/hardware--electronic-implementation">More info about MIDI</a></p>
 
     </div>
   </div>

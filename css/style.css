@@ -32,26 +32,17 @@ p {
 */
 
 /* content with a width less than the full-screen amount */
-/*
+
 .project-page {
     max-width: 800px;
     padding: 10px;
     background-color: #EEEEFF;
 }
 
-.section-title {
-    padding: 15px 0px 15px 0px;
-    margin: 5px 0 5px 0;
-}
-
-.subsection-title {
-    padding: 5px 0 0 0;
-}
-
 .card {
     padding: 10px;
 }
-*/
+
 /* MEDIA CLASSES ~~~~~~~~~~~~~~~~~~~~~~
  * images and gifs 
 */
