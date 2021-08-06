@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Christopher Hamby</title>
+    <title>homepage on Christopher Hamby</title>
     <link>cjhamby.github.io/</link>
-    <description>Recent content on Christopher Hamby</description>
+    <description>Recent content in homepage on Christopher Hamby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2020 16:55:02 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jul 2021 11:08:29 -0400</lastBuildDate>
     
 	<atom:link href="cjhamby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2D Art</title>
+      <link>cjhamby.github.io/art2d/</link>
+      <pubDate>Fri, 06 Aug 2021 12:28:08 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/art2d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>3D Art</title>
+      <link>cjhamby.github.io/art3d/</link>
+      <pubDate>Fri, 06 Aug 2021 12:23:17 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/art3d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Animation</title>
+      <link>cjhamby.github.io/animation/</link>
+      <pubDate>Fri, 06 Aug 2021 12:23:17 -0400</pubDate>
+      
+      <guid>cjhamby.github.io/animation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Key Holder</title>

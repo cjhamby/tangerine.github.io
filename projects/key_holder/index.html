@@ -34,48 +34,51 @@
      
 </head><body><header>
 
-<div class="hero is-warning is-bold">   
+<div class="hero is-dark is-bold">   
+    <div class="hero-head">
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" title="home" class="navbar-item">
+                        <span class="logo"><h1 class="title">Christopher Hamby</h1></span>
+                    </a>
+                    
+
+                    
+
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+
+                </div>
+
+
+                <div class="navbar-menu">
+
+                    <div class="navbar-start">
+                        
+                        <a href="/cjhamby.github.io/art3d/" class="navbar-item">3D</a>
+                        
+                        <a href="/cjhamby.github.io/animation/" class="navbar-item">Animation</a>
+                        
+                        <a href="/cjhamby.github.io/art2d/" class="navbar-item">Digital Art</a>
+                        
+                        <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
+                        
+                    </div>
+
+                    <div class="navbar-end">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </div>
     <div class="hero-body">
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-brand">
-                
-                <a href="/" title="home" class="navbar-item">
-                    <span class="logo"><h1 class="title">Christopher Hamby</h1></span>
-                </a>
-                
-
-                
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-
-            </div>
-
-
-            <div class="navbar-menu">
-
-                <div class="navbar-start">
-                    
-                    <a href="/cjhamby.github.io/blog/" class="navbar-item">Blog</a>
-                    
-                    <a href="/cjhamby.github.io/gallery/" class="navbar-item">Gallery</a>
-                    
-                    <a href="/cjhamby.github.io/projects/" class="navbar-item">Projects</a>
-                    
-                </div>
-
-                <div class="navbar-end">
-                    
-                </div>
-                
-            </div>
-        </div>
-    </nav>
-</div>
+    </div>
 </div>
 <script>
     $(document).ready(function () {
@@ -85,197 +88,128 @@
         })
     })
 </script>
-</header><main aria-role="main">
+</header>
+        <main aria-role="main">
 <section class="section">
   <div class="container">
     <h1 class="title">Key Holder</h1>
-    <h2 class="subtitle">Replacement Key Fob Housing</h2>
+    <div class="content">
+      
+
+
+<div id="gallery_goes_here"></div>
+
+<div class="container" id="gallery_pag"></div>
+
+
+
+
+<script>
+
+var isVideoGallery = false;
+var numPerPage = 8; 
+var numPerRow = 4;  
+
+function getResources(){
+    var urls = getPhotos();
+    if (urls.length == 0) {
+        urls = getVideos();
+        isVideoGallery = true;
+        numPerPage = 2;     
+    }
+    return urls;
+}
+
+
+function getPhotos(){
+    var urls = [   
+                
+                ];
+    return urls;
+}
+
+function getVideos(){
+    var urls = [   
+                
+                ];
+    return urls;
+}
+
+
+function formatPhotoColumn(data){
     
-    <div class="content project-page">
-        <p>One day, the plastic housing that held my friend&rsquo;s key fob together broke.</p>
+    var temp = "";
+    temp+="<div class=\"column is-3\">"; 
+    temp+="<a href=\"" + data + "\">";
+    temp+="<img src=\"" + data + "\" alt=\"\">"; 
+    temp+="</a>";
+    temp+="</div>";
+    return temp;
+}
+
+function formatVideoColumn(data){
+    var temp = "";
+    temp+="<div class=\"column is-3\">"; 
+    temp+="<video controls>";
+    temp+="<source src=\"" + data + "\">";
+    temp+="Video Unsupported"; 
+    temp+="</video>"
+    temp+="</div>";
+    return temp;
+}
 
 
+function formatGalleryColumns(data){
+    var i;
+    var temp = "";
+    temp+="<div class=\"section\">";
+    temp+="<div class=\"container gallery\">";
+    temp+="<div class=\"columns is-centered\">";
 
-
-
-
-
-
-
-
-<div class="zoom-out-pic">
-    <figure>
-        <div class="image is-4by3" onclick=open_modal(&#34;broken&#34;)>
-            <img src=/images/key_holder/broken_key.jpg alt=""> 
-        </div>
-        <figcaption class="has-text-link">Key - Exploded View</figcaption>
-    </figure>
-</div>
-
-
-<div id=broken class="modal">
-    <div class="modal-background" onclick=close_modal(&#34;broken&#34;)></div>
-        <div class="zoom-in-pic modal-content">
-            <div class="image">
-                <img src=/images/key_holder/broken_key.jpg alt="">                           
-            </div>
-            <div class="caption has-text-link">Key - Exploded View</div>       
-        </div>
+    for(i=0; i<data.length; i++){
         
-        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;broken&#34;)></button>
-</div>
-<p>The plastic shell had two halves.  One was connected to the metal on the key, and the other snapped onto it.  Inside the shell were the electronics responsible for locking/unlocking doors and allowing the car to start.  Some tabs on the plastic shell had broken off, so the case couldn&rsquo;t snap together anymore.  Fortunately, it fell apart in their bag and all of the pieces were contained- replacing the electronics inside the key would&rsquo;ve cost a lot.  While a new case wouldn&rsquo;t have been as expensive, I wanted to attempt to 3D print a &ldquo;free&rdquo; solution.</p>
+        if(i>=numPerRow && (i)%numPerRow==0){
+            temp+="</div><div class=\"columns\">";
+        }
+        if(isVideoGallery){
+            temp += formatVideoColumn(data[i]);
+        } else {
+            temp += formatPhotoColumn(data[i]);
+        }
+    }
+    temp+="</div>";
+    temp+="</div>";
+    temp+="</div>";
+    return temp;
+}
 
 
 
 
+$(document).ready(function(){
+    
 
-
-
-
-
-
-<div class="zoom-out-pic">
-    <figure>
-        <div class="image is-4by3" onclick=open_modal(&#34;view1&#34;)>
-            <img src=/images/key_holder/view1.jpg alt=""> 
-        </div>
-        <figcaption class="has-text-link">Finished Design</figcaption>
-    </figure>
-</div>
-
-
-<div id=view1 class="modal">
-    <div class="modal-background" onclick=close_modal(&#34;view1&#34;)></div>
-        <div class="zoom-in-pic modal-content">
-            <div class="image">
-                <img src=/images/key_holder/view1.jpg alt="">                           
-            </div>
-            <div class="caption has-text-link">Finished Design</div>       
-        </div>
+    $("#gallery_pag").pagination({
+    
+        dataSource: getResources(),
+    
+        pageSize: numPerPage,
+        showPageNumbers: true,
+        showNavigator: false,
+    
+        className: 'paginationjs-theme-dark paginationjs-big',
         
-        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;view1&#34;)></button>
-</div>
-<div class="section-title" id=Design&#32;Process>
-    <h3>Design Process</h3>
-</div>
-<p>Rather than try to print a replica of the shell piece, I designed a larger &ldquo;container&rdquo; that could hold the other pieces.  This shell implemented the buttons (which had gone missing by this point), and prevented the other pieces from escaping.</p>
-<p>Two types of 3D modeling are <strong>solid modeling</strong> and <strong>wireframe modeling</strong> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.  Solid modeling is good for designs that use simple geometric shapes, such as my <a href="/projects/loom">loom project</a>.  I wanted the piece I printed to fit the form of the curved key, which would&rsquo;ve been a difficult task in solid modeling.  Wireframe modeling allows the user to create geometry based on sets of verteces.</p>
-<p>I used <a href="#">Blender</a> for the wireframe modeling.  I tried to keep the design as lightweight and form-fitting as possible.  Not many vertices were needed for prototyping- the printer resolution was one limiting factor.   The geometry was traced from a reference photo.  I marked where the buttons and locating tab were.</p>
+ 
+        callback: function(data, pagination){
+             var html = formatGalleryColumns(data);
+            
+            $("#gallery_goes_here").html(html);
+        }
+    })
+})
 
+</script>
 
-
-
-
-
-
-
-
-
-<div class="zoom-out-pic">
-    <figure>
-        <div class="image is-4by3" onclick=open_modal(&#34;w_trace&#34;)>
-            <img src=/images/key_holder/wireframe_trace.png alt=""> 
-        </div>
-        <figcaption class="has-text-link">wireframe_trace</figcaption>
-    </figure>
-</div>
-
-
-<div id=w_trace class="modal">
-    <div class="modal-background" onclick=close_modal(&#34;w_trace&#34;)></div>
-        <div class="zoom-in-pic modal-content">
-            <div class="image">
-                <img src=/images/key_holder/wireframe_trace.png alt="">                           
-            </div>
-            <div class="caption has-text-link">wireframe_trace</div>       
-        </div>
-        
-        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;w_trace&#34;)></button>
-</div>
-<p>Once the mesh had the correct shape, it needed to be dimensioned.  I opened the mesh in Fusion 360<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> to achieve this.  I set the scale by measuring the key at a couple of points with calipers.  I then printed a test plate to ensure the geometry matched up.</p>
-
-
-
-
-
-
-
-
-
-
-<div class="zoom-out-pic">
-    <figure>
-        <div class="image is-4by3" onclick=open_modal(&#34;t_fit&#34;)>
-            <img src=/images/key_holder/test_fit_1.png alt=""> 
-        </div>
-        <figcaption class="has-text-link">test_fit_1</figcaption>
-    </figure>
-</div>
-
-
-<div id=t_fit class="modal">
-    <div class="modal-background" onclick=close_modal(&#34;t_fit&#34;)></div>
-        <div class="zoom-in-pic modal-content">
-            <div class="image">
-                <img src=/images/key_holder/test_fit_1.png alt="">                           
-            </div>
-            <div class="caption has-text-link">test_fit_1</div>       
-        </div>
-        
-        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;t_fit&#34;)></button>
-</div>
-<p>After successfully fitting the part, I added a few features.  The first was a slot to hold the metal portion of the key.  The metal was attached to the back half of the plastic.  Holding the metal key also held the plastic in place.  But, holding it in only one place wasn&rsquo;t secure enough.  I added a tab to hold the other end of the plastic.</p>
-<div class="section-title" id=Results>
-    <h3>Results</h3>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="zoom-out-pic">
-    <figure>
-        <div class="image is-4by3" onclick=open_modal(&#34;view2&#34;)>
-            <img src=/images/key_holder/view2.jpg alt=""> 
-        </div>
-        <figcaption class="has-text-link">The key fits securely into the design</figcaption>
-    </figure>
-</div>
-
-
-<div id=view2 class="modal">
-    <div class="modal-background" onclick=close_modal(&#34;view2&#34;)></div>
-        <div class="zoom-in-pic modal-content">
-            <div class="image">
-                <img src=/images/key_holder/view2.jpg alt="">                           
-            </div>
-            <div class="caption has-text-link">The key fits securely into the design</div>       
-        </div>
-        
-        <button class="modal-close is-large" aria-label="close" onclick=close_modal(&#34;view2&#34;)></button>
-</div>
-<p>It&rsquo;s been a few months, and the key holder seems to be working fine. This design wasn&rsquo;t my first one. Compared to earlier iterations, this design performs better and holds the key much more securely.  The face of the newly printed part replaces where the buttons used to be.  The plastic is thin enough to be pressed down easily. At the buttons, I added small circular nubs to make pressing them even easier.</p>
-<p>I enjoyed learning about wireframe modeling and prototyping.  I&rsquo;m not sure that my design is better than buying a low-cost replacement housing, but the experience made the process worthwhile.</p>
-<div class="section-title" id=References>
-    <h3>References</h3>
-</div>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://all3dp.com/2/types-of-3d-modeling/">Types Of 3D Modeling</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p><a href="https://www.autodesk.com/products/fusion-360/personal">Fusion 360</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
 
     </div>
   </div>

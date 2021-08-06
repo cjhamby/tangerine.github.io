@@ -23,14 +23,16 @@ p {
 /* CONTENT FORMATTING CLASSES ~~~~~~~~~~~~~~~~~~~~~~
  * for articles and list pages
 */
-
+/*
 .homepage {
     max-width: 800px;
     padding: 10px;
     background-color: #EEEEFF;
 }
+*/
 
 /* content with a width less than the full-screen amount */
+/*
 .project-page {
     max-width: 800px;
     padding: 10px;
@@ -49,7 +51,7 @@ p {
 .card {
     padding: 10px;
 }
-
+*/
 /* MEDIA CLASSES ~~~~~~~~~~~~~~~~~~~~~~
  * images and gifs 
 */
